@@ -5,7 +5,7 @@ default_run_options[:env] = {'PATH' => '/usr/local/bin:$PATH'}
 load "config/recipes/helpers"
 
 set :application, "Kochiku"
-set :repository,  "https://github.com/square/kochiku.git"
+set :repository,  "https://github.com/anhqpham/kochiku.git"
 set :branch, "master"
 set :scm, :git
 set :scm_command, 'git'
