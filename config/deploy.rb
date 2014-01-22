@@ -2,6 +2,8 @@ require 'bundler/capistrano' # adds bundle:install step to deploy pipeline
 
 default_run_options[:env] = {'PATH' => '/usr/local/bin:$PATH'}
 
+load "config/recipes/helpers"
+
 set :application, "Kochiku"
 set :repository,  "https://github.com/square/kochiku.git"
 set :branch, "master"
@@ -9,7 +11,7 @@ set :scm, :git
 set :scm_command, 'git'
 
 set :user, "kochiku"
-set :deploy_to, "/app/#{user}/kochiku"
+set :deploy_to, "/home/#{user}/app"
 set :deploy_via, :remote_cache
 set :keep_releases, 10
 set :use_sudo, false
@@ -93,6 +95,8 @@ namespace :kochiku do
     run "ps -eo 'pid ppid comm' |grep -i resque |grep Paused | awk '$2 == 1 { print $1 }' | xargs kill"
   end
 end
+
+
 
 # load installation specific capistrano config
 load File.expand_path('deploy.custom.rb', File.dirname(__FILE__))

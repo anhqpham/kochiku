@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.14'
-gem 'passenger', '4.0.10', group: :production
+# gem 'passenger', '4.0.10', group: :production
+gem 'unicorn', group: :production
 gem 'dynamic_form'
 
 gem 'carrierwave'
@@ -36,6 +37,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'fivemat'
   gem 'factory_girl_rails'
   gem 'launchy'
 end
