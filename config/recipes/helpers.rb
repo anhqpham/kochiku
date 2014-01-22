@@ -1,5 +1,5 @@
 def template(from, to)
-  erb = File.read(File.expand_path("../recipes/templates/#{from}"), __FILE__)
+  erb = File.read("./config/recipes/templates/#{from}")
   put ERB.new(erb).result(binding), to
 end
 
