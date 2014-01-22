@@ -3,7 +3,7 @@ pid "<%= unicorn_pid %>"
 stderr_path "<%= unicorn_log %>"
 stdout_path "<%= unicorn_log %>"
 
-listen "/tmp/unicorn.<%= application %>.sock", :backlog => 256
+listen "/tmp/unicorn.<%= application %>.sock", :backlog => 2048
 listen 9100, :tcp_nopush => true
 
 worker_processes <%= unicorn_workers %>
