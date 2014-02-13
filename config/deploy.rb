@@ -16,8 +16,8 @@ set :deploy_via, :remote_cache
 set :keep_releases, 10
 set :use_sudo, false
 
-# set :rails_env, "production"
-set :rails_env, "development"
+set :rails_env, "production"
+# set :rails_env, "development"
 
 after "deploy:setup",          "kochiku:setup"
 after "deploy:create_symlink", "kochiku:symlinks"
